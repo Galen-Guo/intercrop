@@ -39,17 +39,14 @@ done
 mkdir $HUMANN/summary/
 
 
-for sample in `awk '{print $1}' $WORK/NS.1718`;
+for i in `awk '{print $1}' $WORK/NS.1718`;
 do
 echo $i
-humann_renorm_table --input $HUMANN/output/${i}_genefamilies.tsv --output $HUMANN/output/cpm/${i}_genefamilies-cpm.tsv --units cpm --update-snames
-humann_renorm_table --input $HUMANN/output/${i}_pathcoverage.tsv --output $HUMANN/output/cpm/${i}_pathcoverage-cpm.tsv --units cpm --update-snames
-humann_renorm_table --input $HUMANN/output/${i}_pathabundance.tsv --output $HUMANN/output/cpm/${i}_pathabundance-cpm.tsv --units cpm --update-snames
+humann_renorm_table --input $HUMANN/output/${i}_genefamilies.tsv --output $HUMANN/cpm/${i}_genefamilies-cpm.tsv --units cpm --update-snames
+humann_renorm_table --input $HUMANN/output/${i}_pathcoverage.tsv --output $HUMANN/cpm/${i}_pathcoverage-cpm.tsv --units cpm --update-snames
+humann_renorm_table --input $HUMANN/output/${i}_pathabundance.tsv --output $HUMANN/cpm/${i}_pathabundance-cpm.tsv --units cpm --update-snames
 done
 
-humann_join_tables -i $HUMANN/output/cpm/ -o $HUMANN/output/summary/all_genefamilies.tsv --file_name genefamilies
-humann_join_tables -i $HUMANN/output/cpm/ -o $HUMANN/output/summary/all_pathcoverage.tsv --file_name pathcoverage
-humann_join_tables -i $HUMANN/output/cpm/ -o $HUMANN/output/summary/all_pathabundance.tsv --file_name pathabundance
-
-
-
+humann_join_tables -i $HUMANN/cpm/ -o $HUMANN/summary/all_genefamilies.tsv --file_name genefamilies
+humann_join_tables -i $HUMANN/cpm/ -o $HUMANN/summary/all_pathcoverage.tsv --file_name pathcoverage
+humann_join_tables -i $HUMANN/cpm/ -o $HUMANN/summary/all_pathabundance.tsv --file_name pathabundance
