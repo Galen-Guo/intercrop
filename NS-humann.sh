@@ -47,6 +47,6 @@ humann_renorm_table --input $HUMANN/output/${i}_pathcoverage.tsv --output $HUMAN
 humann_renorm_table --input $HUMANN/output/${i}_pathabundance.tsv --output $HUMANN/cpm/${i}_pathabundance-cpm.tsv --units cpm --update-snames
 done
 
-humann_join_tables -i $HUMANN/cpm/ -o $HUMANN/summary/all_genefamilies.tsv --file_name genefamilies
-humann_join_tables -i $HUMANN/cpm/ -o $HUMANN/summary/all_pathcoverage.tsv --file_name pathcoverage
-humann_join_tables -i $HUMANN/cpm/ -o $HUMANN/summary/all_pathabundance.tsv --file_name pathabundance
+humann_join_tables -i $HUMANN/cpm/ -o $HUMANN/summary/NS_1718_all_genefamilies.tsv --file_name genefamilies
+humann_join_tables -i $HUMANN/cpm/ -o $HUMANN/summary/NS_1718_all_pathcoverage.tsv --file_name pathcoverage
+humann_join_tables -i $HUMANN/cpm/ -o $HUMANN/summary/NS_1718_all_pathabundance.tsv --file_name pathabundance
