@@ -33,12 +33,12 @@ echo mapping
 ## building mapping files
 mkdir $MAPPING
 mkdir $MAPPING/1718/
-mkdir $MAPPING/1718/plot4
-cd $MAPPING/1718/plot4
+mkdir $MAPPING/1718/plot6
+cd $MAPPING/1718/plot6
 
 
 
-bowtie2-build $ANVIO/1718/plot4/plot4_1718_contigs.fa $MAPPING/1718/plot4/plot4_contigs --threads 24 --large-index
+bowtie2-build $ANVIO/1718/plot6/plot6_1718_contigs.fa $MAPPING/1718/plot6/plot6_contigs --threads 24 --large-index
 
 ### mapping read to contigs
 
@@ -49,7 +49,7 @@ do
 R1="${sample}.pair1.fq.gz"
 R2="${sample}.pair2.fq.gz"
 sam="${sample}.sam"
-bowtie2 -x $MAPPING/1718/plot4_contigs -1 $TRIM/plot4/$R1 -2 $TRIM/plot4/$R2 -S $MAPPING/1718/plot4/$sam --threads 24
+bowtie2 -x $MAPPING/1718/plot6_contigs -1 $TRIM/plot6/$R1 -2 $TRIM/plot6/$R2 -S $MAPPING/1718/plot6/$sam --threads 24
 done
 
 
@@ -62,7 +62,7 @@ for sample in `awk '{print $1}' $WORK/NS.1718`;
 do
 sam=".sam"
 bam=".bam"
-samtools view -S -b $MAPPING/1718/plot4/${sample}.sam > $MAPPING/1718/plot4/${sample}.bam
+samtools view -S -b $MAPPING/1718/plot6/${sample}.sam > $MAPPING/1718/plot6/${sample}.bam
 done
 
 
@@ -74,7 +74,7 @@ conda activate anvio7
 for sample in `awk '{print $1}' $WORK/NS.1718`;
 do
 done
-anvi-init-bam $MAPPING/1718/plot4/${sample}.bam -o $MAPPING/1718/plot4/${sample}_anvi.bam
+anvi-init-bam $MAPPING/1718/plot6/${sample}.bam -o $MAPPING/1718/plot6/${sample}_anvi.bam
 
 
 echo mapping_done
