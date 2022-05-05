@@ -47,11 +47,7 @@ ANVIO=$WORK/anvio
 
 echo co-assembling 1718, by sequencing length
 
-for i in plot4 plot5 plot6;
-do
 F=$(echo $(ls $TRIM/plot6/NS.1718.F8P*.pair1.fq.gz)  | sed "s/ /,/g")
 R=$(echo $(ls $TRIM/plot6/NS.1718.F8P*.pair2.fq.gz)  | sed "s/ /,/g")
 
-megahit -1 $F -2 $R -o $MEGAHIT/1718/plot6/ -t 12 --min-contig-len 1000 --presets meta-large --continue  --k-min 37 --k-max 77 --k-step 10 --kmin-1pass --no-mercy
-
-done
+megahit -1 $F -2 $R -o $MEGAHIT/1718/plot6/ -t 12 --min-contig-len 1000 --continue  --k-min 37 --k-max 77 --k-step 10
