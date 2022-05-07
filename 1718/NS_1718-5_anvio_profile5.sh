@@ -21,26 +21,26 @@ ANVIO=$WORK/anvio
 
 
 ####################################################################
-### loading into anvio ### 
+### loading into anvio ###
 ####################################################################
-# cd $MAPPING/1718
-# rename 's/-/_/g' *_anvi*
-# rename 's/NS.1718./NS1718_/g' *_anvi*
-# ## ### do everything in one file, using more cpu. (5 days)
 
-# cp $WORK/NS.1718 $MAPPING/1718/
-# sed -i 's/-/_/g' $MAPPING/1718/NS.1718
-# sed -i 's/NS.1718./NS1718_/g' $MAPPING/1718/NS.1718
-# mkdir $ANVIO/1718/profile
+cd $MAPPING/1718/plot5
+ rename 's/-/_/g' *_anvi*
+ rename 's/NS.1718./NS1718_/g' *_anvi*
 
-for sample in `awk '{print $1}' $MAPPING/1718/NS.1718`;
+
+ cp $WORK/NS.1718 $MAPPING/1718/plot5
+ sed -i 's/-/_/g' $MAPPING/1718/plot5/NS.1718
+ sed -i 's/NS.1718./NS1718_/g' $MAPPING/1718/plot5/NS.1718
+ mkdir $ANVIO/1718/plot5/profile
+
+for sample in `awk '{print $1}' $MAPPING/1718/plot5/NS.1718`;
 do
-echo $sample 
-anvi-profile -i $MAPPING/1718/${sample}_anvi.bam -c $ANVIO/1718/1718_contigs.db --output-dir $ANVIO/1718/profile/$sample --sample-name $sample -T 24 --min-contig-length 1000
+echo $sample
+anvi-profile -i $MAPPING/1718/plot5/${sample}_anvi.bam -c $ANVIO/1718/plot5/plot5_1718_contigs.db --output-dir $ANVIO/1718/plot5/profile/$sample --sample-name $sample -T 24 --min-contig-length 1000
 
 done
 
 ## merge profile
 
-anvi-merge  $ANVIO/1718/profile/*/PROFILE.db -o $ANVIO/1718/profile_merged -c $ANVIO/1718/1718_contigs.db -S NS_1718
-
+anvi-merge  $ANVIO/1718/plot5/profile/*/PROFILE.db -o $ANVIO/1718/plot5/profile_merged -c $ANVIO/1718/plot5/plot5_1718_contigs.db -S NS_1718_plot5
