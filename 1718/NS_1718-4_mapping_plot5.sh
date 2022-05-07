@@ -73,8 +73,8 @@ conda activate anvio7
 
 for sample in `awk '{print $1}' $WORK/NS.1718`;
 do
-done
-anvi-init-bam $MAPPING/1718/plot5/${sample}.bam -o $MAPPING/1718/plot5/${sample}_anvi.bam
 
+anvi-init-bam $MAPPING/1718/plot5/${sample}.bam -o $MAPPING/1718/plot5/${sample}_anvi.bam
+done
 
 echo mapping_done
