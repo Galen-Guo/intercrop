@@ -23,18 +23,18 @@ ANVIO=$WORK/anvio
 ####################################################################
 ### loading into anvio ###
 ####################################################################
+# 
+# cd $MAPPING/1718/plot5
+#  rename 's/-/_/g' *_anvi*
+#  rename 's/NS.1718./NS1718_/g' *_anvi*
+#
+#
+#  cp $WORK/NS.1718.plot5 $MAPPING/1718/plot5
+#  sed -i 's/-/_/g' $MAPPING/1718/plot5/NS.1718
+#  sed -i 's/NS.1718./NS1718_/g' $MAPPING/1718/plot5/NS.1718
+#  mkdir $ANVIO/1718/plot5/profile
 
-cd $MAPPING/1718/plot5
- rename 's/-/_/g' *_anvi*
- rename 's/NS.1718./NS1718_/g' *_anvi*
-
-
- cp $WORK/NS.1718 $MAPPING/1718/plot5
- sed -i 's/-/_/g' $MAPPING/1718/plot5/NS.1718
- sed -i 's/NS.1718./NS1718_/g' $MAPPING/1718/plot5/NS.1718
- mkdir $ANVIO/1718/plot5/profile
-
-for sample in `awk '{print $1}' $MAPPING/1718/plot5/NS.1718`;
+for sample in `awk '{print $1}' $MAPPING/1718/plot5/NS.1718.plot5`;
 do
 echo $sample
 anvi-profile -i $MAPPING/1718/plot5/${sample}_anvi.bam -c $ANVIO/1718/plot5/plot5_1718_contigs.db --output-dir $ANVIO/1718/plot5/profile/$sample --sample-name $sample -T 24 --min-contig-length 1000
