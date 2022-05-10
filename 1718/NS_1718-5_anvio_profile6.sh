@@ -23,14 +23,14 @@ ANVIO=$WORK/anvio
 ####################################################################
 ### loading into anvio ###
 # ####################################################################
-# cd $MAPPING/1718/plot6
-# rename 's/-/_/g' *_anvi*
-# rename 's/NS.1718./NS1718_/g' *_anvi*
-# 
-#
-# cp $WORK/NS.1718.plot6 $MAPPING/1718/plot6
-# sed -i 's/-/_/g' $MAPPING/1718/plot6/NS.1718
-# sed -i 's/NS.1718./NS1718_/g' $MAPPING/1718/plot6/NS.1718
+cd $MAPPING/1718/plot6
+rename 's/-/_/g' *_anvi*
+rename 's/NS.1718./NS1718_/g' *_anvi*
+
+
+cp $WORK/NS.1718.plot6 $MAPPING/1718/plot6
+sed -i 's/-/_/g' $MAPPING/1718/plot6/NS.1718.plot6
+sed -i 's/NS.1718./NS1718_/g' $MAPPING/1718/plot6/NS.1718.plot6
 # mkdir $ANVIO/1718/plot6/profile
 
 for sample in `awk '{print $1}' $MAPPING/1718/plot6/NS.1718.plot6`;
