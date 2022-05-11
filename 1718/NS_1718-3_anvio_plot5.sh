@@ -43,7 +43,7 @@ anvi-gen-contigs-database -f $ANVIO/1718/$i/${i}_1718_contigs.fa -o $ANVIO/1718/
 anvi-run-hmms -c $ANVIO/1718/$i/${i}_1718_contigs.db -T 24
 
 anvi-run-kegg-kofams -c $ANVIO/1718/$i/${i}_1718_contigs.db -T 24 --hmmer-program hmmsearch --just-do-it
-anvi-run-ncbi-cogs -c $ANVIO/1718/$i/${i}_1718_contigs.db --cog-data-dir $GALEN/COG --num-threads 24 --search-with diamond 
+anvi-run-ncbi-cogs -c $ANVIO/1718/$i/${i}_1718_contigs.db --cog-data-dir $GALEN/COG --num-threads 24 --search-with diamond
 anvi-run-pfams -c $ANVIO/1718/$i/${i}_1718_contigs.db --pfam-data-dir $GALEN/database/pfam --hmmer-program hmmscan --num-threads 24
 
 
