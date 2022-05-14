@@ -25,7 +25,7 @@ ANVIO=$WORK/anvio
 ####################################################################
 
 anvi-cluster-contigs -c $ANVIO/1718/plot4/plot4_1718_contigs.db -p $ANVIO/1718/plot4/profile_merged/PROFILE.db -C plot4_concoct --driver concoct -T 24 --just-do-it
-anvi-cluster-contigs -c $ANVIO/1718/plot4/plot4_1718_contigs.db -p $ANVIO/1718/plot4/profile_merged/PROFILE.db -C anvio_derep_metabat2 --driver plot4_metabat2 -T 24 --just-do-it
+anvi-cluster-contigs -c $ANVIO/1718/plot4/plot4_1718_contigs.db -p $ANVIO/1718/plot4/profile_merged/PROFILE.db -C plot4_metabat2 --driver metabat2 -T 24 --just-do-it
 conda activate anvio-7.1
 anvi-cluster-contigs -c $ANVIO/1718/plot4/plot4_1718_contigs.db -p $ANVIO/1718/plot4/profile_merged/PROFILE.db -S plot4_concoct,plot4_metabat2 --driver dastool --search-engine diamond -C plot4_dastool -T 24 --just-do-it
 conda activate anvio7
