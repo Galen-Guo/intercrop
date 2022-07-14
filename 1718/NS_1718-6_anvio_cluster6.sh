@@ -31,6 +31,6 @@ anvi-cluster-contigs -c $ANVIO/1718/plot6/plot6_1718_contigs.db -p $ANVIO/1718/p
 
 anvi-cluster-contigs -c $ANVIO/1718/plot6/plot6_1718_contigs.db -p $ANVIO/1718/plot6/profile_merged/PROFILE.db -S plot6_concoct,plot6_metabat2,plot6_maxbin2 --driver dastool --search-engine diamond -C plot6_dastool -T 24 --just-do-it
 conda activate anvio7
-anvi-summarize -c -c $ANVIO/1718/plot6/plot6_1718_contigs.db -p $ANVIO/1718/plot6/profile_merged/PROFILE.db -o $ANVIO/1718/plot6/sample_summary_dastool -C plot6_dastool --init-gene-coverages
+anvi-summarize -c $ANVIO/1718/plot6/plot6_1718_contigs.db -p $ANVIO/1718/plot6/profile_merged/PROFILE.db -o $ANVIO/1718/plot6/sample_summary_dastool -C plot6_dastool --init-gene-coverages
 
-anvi-summarize -c -c $ANVIO/1718/plot6/plot6_1718_contigs.db -p $ANVIO/1718/plot6/profile_merged/PROFILE.db -o $ANVIO/1718/plot6/sample_summary_dastool -C plot6_concoct --init-gene-coverages
+anvi-summarize -c $ANVIO/1718/plot6/plot6_1718_contigs.db -p $ANVIO/1718/plot6/profile_merged/PROFILE.db -o $ANVIO/1718/plot6/sample_summary_dastool -C plot6_concoct --init-gene-coverages

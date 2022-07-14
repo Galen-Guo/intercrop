@@ -31,4 +31,4 @@ anvi-cluster-contigs -c $ANVIO/1718/plot5/plot5_1718_contigs.db -p $ANVIO/1718/p
 
 anvi-cluster-contigs -c $ANVIO/1718/plot5/plot5_1718_contigs.db -p $ANVIO/1718/plot5/profile_merged/PROFILE.db -S plot5_concoct,plot5_metabat2,plot5_maxbin2 --driver dastool --search-engine diamond -C plot5_dastool -T 24 --just-do-it
 conda activate anvio7
-anvi-summarize -c -c $ANVIO/1718/plot5/plot5_1718_contigs.db -p $ANVIO/1718/plot5/profile_merged/PROFILE.db -o $ANVIO/1718/plot5/sample_summary_dastool -C plot5_dastool --init-gene-coverages
+anvi-summarize -c $ANVIO/1718/plot5/plot5_1718_contigs.db -p $ANVIO/1718/plot5/profile_merged/PROFILE.db -o $ANVIO/1718/plot5/sample_summary_dastool -C plot5_dastool --init-gene-coverages

@@ -53,6 +53,6 @@ anvi-estimate-scg-taxonomy -c $ANVIO/1718/$i/${i}_1718_contigs.db --metagenome-m
 
 anvi-get-sequences-for-gene-calls -c $ANVIO/1718/$i/${i}_1718_contigs.db --get-aa-sequences -o $ANVIO/1718/$i/${i}_1718_amino-acid-sequences.fa
 
-anvi-display-contigs-stats -c $ANVIO/1718/$i/${i}_1718_contigs.db --report-as-text  --output-file $ANVIO/1718/$i/${i}_1718_contigs_stats.txt
+anvi-display-contigs-stats $ANVIO/1718/$i/${i}_1718_contigs.db --report-as-text  --output-file $ANVIO/1718/$i/${i}_1718_contigs_stats.txt
 
 done
